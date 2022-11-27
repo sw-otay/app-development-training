@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-const items = ref([
+const items = ([
   {
     id: 1,
     name: '大吉',
@@ -33,22 +33,20 @@ const items = ref([
   }
   ])
 // リアクティブな状態
-const count = ref(0)
+const result = ref(0)
 
 // 状態を変更し、更新をトリガーする関数。
 function fortune() {
-  var min = 1 ;
-  var max = 5 ;
-  count.value = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+  const min = 1 ;
+  result.value = Math.floor( Math.random() * (items.length + min));
 }
 
 </script>
 
 <template>
   <template v-for="item in items">
-    <div v-if="item.id === count">
+    <div v-if="item.id === result">
       <h1>{{ item.name }}</h1>
-      <p>{{ item.description }}</p>
     </div>
   </template>
 
