@@ -38,7 +38,7 @@ const result = ref(0)
 // 状態を変更し、更新をトリガーする関数。
 function fortune() {
   const min = 1 ;
-  result.value = Math.floor( Math.random() * (items.length + min));
+  result.value = Math.floor( Math.random() * (items.length) + min);
 }
 
 </script>
