@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-const items = ([
+const items = [
   {
     id: 1,
     name: '大吉',
@@ -31,7 +31,7 @@ const items = ([
     description:
       '凶です'
   }
-  ])
+  ]
 // リアクティブな状態
 const result = ref(0)
 
