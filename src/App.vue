@@ -1,17 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 const items = ['大吉','中吉','小吉','吉','凶']
-const resultNum = ref(0)
 const resultVal = ref('')
 
-function fortune() {
-  const min = 0 ;
-  resultNum.value = Math.floor( Math.random() * (items.length) + min);
-  resultVal.value = items[resultNum.value];
+function makeFortune() {
+  resultVal.value = items[Math.floor( Math.random() * (items.length))];
 }
 </script>
 
 <template>
-  <h1>{{ resultVal }}</h1>
-  <button @click="fortune">おみくじ</button>
+  <p>{{ resultVal }}</p>
+  <button @click="makeFortune">おみくじ</button>
 </template>
